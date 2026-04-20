@@ -10,7 +10,7 @@ export default function AdminDashboard() {
     assignedTo: "",
   });
 
-  // 🔹 Fetch users
+  // Fetch users
   const fetchUsers = async () => {
     try {
       const res = await fetch("http://localhost:5000/api/users");
@@ -26,7 +26,7 @@ export default function AdminDashboard() {
     }
   };
 
-  // 🔹 Fetch tasks
+  // Fetch tasks
   const fetchTasks = async () => {
     const res = await fetch("http://localhost:5000/api/tasks", {
       headers: {
@@ -37,10 +37,10 @@ export default function AdminDashboard() {
     setTasks(Array.isArray(data) ? data : []);
   };
 
-  // 🔹 Create task
+  // Create task
   const createTask = async () => {
     if (!form.title || !form.description || !form.assignedTo) {
-      alert("Please fill all fields"); // ✅ ADD THIS
+      alert("Please fill all fields"); 
       return;
     }
 
@@ -71,7 +71,7 @@ export default function AdminDashboard() {
           Admin Dashboard
         </h1>
 
-        {/* 🔥 Create Task Form */}
+        {/* Create Task Form */}
         <div className="bg-white p-4 rounded shadow mb-6 grid grid-cols-4 gap-4">
           <input
             placeholder="Title"
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
           </button>
         </div>
 
-        {/* 🔥 Task List */}
+        {/* Task List */}
         <div className="grid grid-cols-3 gap-4">
           {tasks.map((task) => (
             <div key={task._id} className="bg-white p-4 rounded shadow border">

@@ -19,7 +19,7 @@ export default function Login() {
       localStorage.setItem("role", data.role);
       localStorage.setItem("name", data.name);
 
-      // ✅ Role based redirect
+      // Role based redirect
       if (data.role === "admin") {
         navigate("/admin");
       } else {

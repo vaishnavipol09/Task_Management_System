@@ -22,7 +22,7 @@ export default function Register() {
 
     if (res.ok) {
       alert("Registration successful!");
-      navigate("/"); // 👈 back to login
+      navigate("/"); // back to login
     } else {
       alert(data.message || "Registration failed");
     }

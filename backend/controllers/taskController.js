@@ -1,7 +1,7 @@
 const Task = require("../models/Task");
-const mongoose = require("mongoose"); // ✅ ADD THIS LINE
+const mongoose = require("mongoose"); 
 
-// 🔹 Create Task
+// Create Task
 exports.createTask = async (req, res) => {
   try {
     const { title, description, assignedTo } = req.body;
@@ -24,18 +24,18 @@ exports.createTask = async (req, res) => {
   }
 };
 
-// 🔹 Get Tasks
+// Get Tasks
 exports.getTasks = async (req, res) => {
   try {
     console.log("LOGGED USER 👉", req.user);
 
-    // ✅ Admin → all tasks
+    // Admin → all tasks
     if (req.user.role === "admin") {
       const tasks = await Task.find().populate("assignedTo", "name email");
       return res.json(tasks);
     }
 
-    // ✅ User → only assigned tasks (IMPORTANT FIX)
+    // User see only assigned tasks
     const tasks = await Task.find({
       assignedTo: new mongoose.Types.ObjectId(req.user.id)
     }).populate("assignedTo", "name email");
@@ -48,7 +48,7 @@ exports.getTasks = async (req, res) => {
   }
 };
 
-// 🔹 Update Status
+// Update Status
 exports.updateStatus = async (req, res) => {
   const { id } = req.params;
   const { status } = req.body;

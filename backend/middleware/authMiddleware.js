@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
   }
 
   try {
-    // ✅ Remove "Bearer "
+    
     const token = authHeader.split(" ")[1];
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -17,7 +17,6 @@ module.exports = (req, res, next) => {
     next();
 
   } catch (error) {
-    console.log("JWT ERROR 👉", error.message); // debug
     res.status(401).json({ message: "Invalid token" });
   }
 };
