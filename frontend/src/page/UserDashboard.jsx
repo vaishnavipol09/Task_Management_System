@@ -7,7 +7,7 @@ export default function UserDashboard() {
   const name = localStorage.getItem("name");
 
   const fetchTasks = async () => {
-    const res = await fetch("http://localhost:5000/api/tasks", {
+    const res = await fetch("/api/tasks", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
