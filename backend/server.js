@@ -21,7 +21,10 @@ app.use("/api/users", require("./routes/userRoutes"));
 // Serve frontend
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use((req, res) => {
+app.use((req, res, next) => {
+  if (req.path.startsWith("/api")) {
+    return next(); // API ला जाऊ दे
+  }
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
