@@ -1,6 +1,6 @@
 # Team Task Management System
 
-A full-stack **Team Task Management System** with JWT authentication, role-based access (Admin/User), task assignment, and status tracking.
+A full-stack **Team Task Management System** with JWT authentication, role-based access (Admin/User), task assignment and status tracking.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -8,14 +8,14 @@ A full-stack **Team Task Management System** with JWT authentication, role-based
 
 # Authentication
 
-* JWT-based login & register
+* JWT-based login and register
 * Role-based access (**Admin / User**)
 
 # Admin
 
 * Create tasks
 * Assign tasks to users
-* View all tasks & users
+* View all tasks and users
 
 # User
 
