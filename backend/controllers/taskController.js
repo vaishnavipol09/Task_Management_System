@@ -27,7 +27,6 @@ exports.createTask = async (req, res) => {
 // Get Tasks
 exports.getTasks = async (req, res) => {
   try {
-    console.log("LOGGED USER 👉", req.user);
 
     // Admin → all tasks
     if (req.user.role === "admin") {
