@@ -13,7 +13,7 @@ export default function AdminDashboard() {
   // Fetch users
   const fetchUsers = async () => {
     try {
-      const res = await fetch("https://task-management-system-ofhm.onrender.com/api/users");
+      const res = await fetch("http://localhost:5000/api/users");
 
       if (!res.ok) {
         throw new Error("Failed to fetch users");
@@ -28,7 +28,7 @@ export default function AdminDashboard() {
 
   // Fetch tasks
   const fetchTasks = async () => {
-    const res = await fetch("https://task-management-system-ofhm.onrender.com/api/tasks", {
+    const res = await fetch("http://localhost:5000/api/tasks", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -44,7 +44,7 @@ export default function AdminDashboard() {
       return;
     }
 
-    await fetch("https://task-management-system-ofhm.onrender.com/api/tasks", {
+    await fetch("http://localhost:5000/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
