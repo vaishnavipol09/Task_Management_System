@@ -1,6 +1,6 @@
 export default function TaskCard({ task, refresh }) {
   const updateStatus = async (status) => {
-    await fetch(`http://localhost:5000/api/tasks/${task._id}`, {
+    await fetch(`https://task-management-system-ofhm.onrender.com/api/tasks/${task._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
